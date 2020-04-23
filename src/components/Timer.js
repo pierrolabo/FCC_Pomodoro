@@ -47,9 +47,20 @@ const Timer = () => {
     const seconds = timer.getSeconds();
     return minutes + seconds > 0;
   };
+  const getTime = (timer) => {
+    return `${timer.getMinutes() < 10 ? '0' : ''}${timer.getMinutes()}:${
+      timer.getSeconds() < 10 ? '0' : ''
+    }${timer.getSeconds()}`;
+  };
   const play = () => {
     console.log('play');
     setStartStop(!startStop);
+  };
+  const setReset = () => {
+    inputRef.current.pause();
+
+    inputRef.current.currentTime = 0;
+    reset();
   };
   const playRingtone = () => {
     if (inputRef.current.paused) {
@@ -58,23 +69,12 @@ const Timer = () => {
       inputRef.current.currentTime = 0;
     }
   };
-  const setReset = () => {
-    inputRef.current.pause();
-
-    inputRef.current.currentTime = 0;
-    reset();
-  };
-  const getTime = (timer) => {
-    return `${timer.getMinutes() < 10 ? '0' : ''}${timer.getMinutes()}:${
-      timer.getSeconds() < 10 ? '0' : ''
-    }${timer.getSeconds()}`;
-  };
 
   return (
     <div className='timer-container'>
       <h3 id='timer-label'>{isBreak ? 'Break' : 'Session'}</h3>
       <span id='time-left' className='timer'>
-        {sessionLength == 60 ? '60:00' : getTime(timer)}
+        {sessionLength === 60 ? '60:00' : getTime(timer)}
       </span>
       <audio
         id='beep'
