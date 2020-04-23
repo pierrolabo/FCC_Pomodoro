@@ -82,13 +82,14 @@ const Timer = () => {
         src={ringtone.src}
         ref={inputRef}
       ></audio>
-      <button id='start_stop' onClick={play}>
-        PLAY/STOP
-      </button>
-
-      <button id='reset' onClick={setReset}>
-        RESET
-      </button>
+      <div className='timer-container-buttons'>
+        <div className='button-play' id='start_stop' onClick={play}>
+          <i class='fas fa-play-circle fa-2x'></i>
+        </div>
+        <div className='button-reset' id='reset' onClick={setReset}>
+          <i class='fas fa-history fa-2x'></i>
+        </div>
+      </div>
     </div>
   );
 };
