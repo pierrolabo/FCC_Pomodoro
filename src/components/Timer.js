@@ -72,7 +72,9 @@ const Timer = () => {
 
   return (
     <div className='timer-container'>
-      <h3 id='timer-label'>{isBreak ? 'Break' : 'Session'}</h3>
+      <h3 className='timer-label ' id='timer-label'>
+        {isBreak ? 'Break' : 'Session'}
+      </h3>
       <span id='time-left' className='timer'>
         {sessionLength === 60 ? '60:00' : getTime(timer)}
       </span>
