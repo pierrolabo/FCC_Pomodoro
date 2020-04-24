@@ -8,7 +8,8 @@ const Session = () => {
   const { startStop, setTimer } = contextType;
 
   const handleButtons = (e) => {
-    if (e.target.value === '+') {
+    let value = e.target.getAttribute('value');
+    if (value === '+') {
       if (sessionLength + 1 <= 60 && !startStop) {
         setSessionLength(sessionLength + 1);
         setTimer(CreateTimer(sessionLength + 1));
@@ -23,13 +24,23 @@ const Session = () => {
   return (
     <div className='session-container'>
       <h3 id='session-label'>session length</h3>
-      <button id='session-increment' value='+' onClick={handleButtons}>
-        +
-      </button>
-      <span id='session-length'>{sessionLength}</span>
-      <button id='session-decrement' value='-' onClick={handleButtons}>
-        -
-      </button>
+      <div className='session-buttons'>
+        <div onClick={handleButtons}>
+          <i
+            id='session-increment'
+            class='fas fa-plus-square fa-2x'
+            value='+'
+          ></i>
+        </div>
+        <span id='session-length'>{sessionLength}</span>
+        <div onClick={handleButtons}>
+          <i
+            id='session-decrement'
+            class='fas fa-minus-square fa-2x'
+            value='-'
+          ></i>
+        </div>
+      </div>
     </div>
   );
 };

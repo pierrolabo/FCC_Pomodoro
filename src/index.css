@@ -1,30 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --primary-color: #3b4252;
+  --secondary-color: #434c5e;
+  --label: #ebcb8b;
+  --numbers-color: #d8dee9;
+  --break-color: #bf616a;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  box-sizing: border-box;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-color);
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  color: #fff;
-  background: black;
-}
-.timer-container span {
-  display: block;
-}
+  min-height: 80vh;
+  min-width: 400px;
 
+  margin-top: 8vh;
+  padding: 12px;
+  color: #fff;
+  background-color: rgba(67, 76, 94, 0.4);
+  border: 1px solid var(--secondary-color);
+  border-radius: 12px;
+  box-shadow: 3px 3px 5px 6px rgba(67, 76, 94, 0.4);
+  color: #88c0d0;
+}
+.App h3 {
+  color: var(--label);
+}
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 32px;
+}
+.timer-container .timer-label {
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+.timer-container .timer {
+  display: block;
+  padding: 44px;
+  font-size: 34px;
+}
+.timer-container-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.button-play {
+  background: #5e81ac;
+  padding: 1px;
+  border-radius: 4px;
+}
+.App i {
+  color: #5e81ac;
+}
+.button-play i {
+  color: var(--primary-color);
+}
+.timer-container-buttons i:hover,
+.length-control-container i:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  opacity: 0.6;
+}
 .length-control-container {
   display: flex;
+  flex-direction: column;
+  margin-top: 42px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.length-control-container h3 {
+  text-align: center;
+}
+/* numbers color*/
+.length-control-container span,
+.timer {
+  font-weight: bold;
+  color: var(--numbers-color);
+}
+.break-buttons,
+.session-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 52px 0;
+}
+
+.break-buttons div {
+  margin: 0 55px;
+}
+
+.session-buttons div {
+  margin: 0 50px;
+}
+.isBreak {
+  color: var(--break-color) !important;
+}
+.isPlaying {
+  border: 1px solid var(--break-color);
+  background-color: var(--break-color) !important;
 }

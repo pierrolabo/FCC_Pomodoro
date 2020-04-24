@@ -6,7 +6,8 @@ const Break = () => {
   const { breakLength, setBreakLength } = contextType;
 
   const handleButtons = (e) => {
-    if (e.target.value === '+') {
+    let value = e.target.getAttribute('value');
+    if (value === '+') {
       if (breakLength + 1 <= 60) {
         setBreakLength(breakLength + 1);
       }
@@ -19,13 +20,23 @@ const Break = () => {
   return (
     <div className='break-container'>
       <h3 id='break-label'>Break length</h3>
-      <button id='break-increment' value='+' onClick={handleButtons}>
-        +
-      </button>
-      <span id='break-length'>{breakLength}</span>
-      <button id='break-decrement' value='-' onClick={handleButtons}>
-        -
-      </button>
+      <div className='break-buttons'>
+        <div onClick={handleButtons}>
+          <i
+            id='break-increment'
+            class='fas fa-plus-square fa-2x'
+            value='+'
+          ></i>
+        </div>
+        <span id='break-length'>{breakLength}</span>
+        <div onClick={handleButtons}>
+          <i
+            id='break-decrement'
+            class='fas fa-minus-square fa-2x'
+            value='-'
+          ></i>
+        </div>
+      </div>
     </div>
   );
 };
