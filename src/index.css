@@ -3,6 +3,9 @@
 :root {
   --primary-color: #3b4252;
   --secondary-color: #434c5e;
+  --label: #ebcb8b;
+  --numbers-color: #d8dee9;
+  --break-color: #bf616a;
 }
 body {
   margin: 0;
@@ -31,13 +34,16 @@ body {
   box-shadow: 3px 3px 5px 6px rgba(67, 76, 94, 0.4);
   color: #88c0d0;
 }
-
+.App h3 {
+  color: var(--label);
+}
 .timer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 32px;
 }
 .timer-container .timer-label {
   font-size: 40px;
@@ -65,7 +71,8 @@ body {
 .button-play i {
   color: var(--primary-color);
 }
-.timer-container-buttons i:hover {
+.timer-container-buttons i:hover,
+.length-control-container i:hover {
   cursor: pointer;
   transform: translateY(2px);
   opacity: 0.6;
@@ -80,9 +87,11 @@ body {
 .length-control-container h3 {
   text-align: center;
 }
-.length-control-container span {
+/* numbers color*/
+.length-control-container span,
+.timer {
   font-weight: bold;
-  color: #8fbcbb;
+  color: var(--numbers-color);
 }
 .break-buttons,
 .session-buttons {
@@ -99,5 +108,9 @@ body {
   margin: 0 50px;
 }
 .isBreak {
-  color: #bf616a;
+  color: var(--break-color) !important;
+}
+.isPlaying {
+  border: 1px solid var(--break-color);
+  background-color: var(--break-color) !important;
 }
