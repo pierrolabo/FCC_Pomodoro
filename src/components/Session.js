@@ -25,12 +25,20 @@ const Session = () => {
     <div className='session-container'>
       <h3 id='session-label'>session length</h3>
       <div className='session-buttons'>
-        <div id='session-increment' onClick={handleButtons}>
-          <i class='fas fa-plus-square fa-2x' value='+'></i>
+        <div onClick={handleButtons}>
+          <i
+            id='session-increment'
+            class='fas fa-plus-square fa-2x'
+            value='+'
+          ></i>
         </div>
         <span id='session-length'>{sessionLength}</span>
-        <div id='session-decrement' onClick={handleButtons}>
-          <i class='fas fa-minus-square fa-2x' value='-'></i>
+        <div onClick={handleButtons}>
+          <i
+            id='session-decrement'
+            class='fas fa-minus-square fa-2x'
+            value='-'
+          ></i>
         </div>
       </div>
     </div>

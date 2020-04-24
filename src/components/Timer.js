@@ -72,10 +72,13 @@ const Timer = () => {
 
   return (
     <div className='timer-container'>
-      <h3 className='timer-label ' id='timer-label'>
+      <h3
+        className={isBreak ? 'timer-label isBreak' : 'timer-label'}
+        id='timer-label'
+      >
         {isBreak ? 'Break' : 'Session'}
       </h3>
-      <span id='time-left' className='timer'>
+      <span id='time-left' className={isBreak ? 'timer isBreak' : 'timer'}>
         {sessionLength === 60 ? '60:00' : getTime(timer)}
       </span>
       <audio
@@ -86,7 +89,13 @@ const Timer = () => {
       ></audio>
       <div className='timer-container-buttons'>
         <div className='button-play' id='start_stop' onClick={play}>
-          <i class='fas fa-play-circle fa-2x'></i>
+          <i
+            class={
+              startStop
+                ? 'fas fa-play-circle fa-2x isPlaying'
+                : 'fas fa-play-circle fa-2x'
+            }
+          ></i>
         </div>
         <div className='button-reset' id='reset' onClick={setReset}>
           <i class='fas fa-history fa-2x'></i>

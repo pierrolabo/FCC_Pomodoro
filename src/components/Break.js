@@ -21,12 +21,20 @@ const Break = () => {
     <div className='break-container'>
       <h3 id='break-label'>Break length</h3>
       <div className='break-buttons'>
-        <div id='break-increment' onClick={handleButtons}>
-          <i class='fas fa-plus-square fa-2x' value='+'></i>
+        <div onClick={handleButtons}>
+          <i
+            id='break-increment'
+            class='fas fa-plus-square fa-2x'
+            value='+'
+          ></i>
         </div>
         <span id='break-length'>{breakLength}</span>
-        <div id='break-decrement' onClick={handleButtons}>
-          <i class='fas fa-minus-square fa-2x' value='-'></i>
+        <div onClick={handleButtons}>
+          <i
+            id='break-decrement'
+            class='fas fa-minus-square fa-2x'
+            value='-'
+          ></i>
         </div>
       </div>
     </div>
