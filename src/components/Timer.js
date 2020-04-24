@@ -88,14 +88,12 @@ const Timer = () => {
         ref={inputRef}
       ></audio>
       <div className='timer-container-buttons'>
-        <div className='button-play' id='start_stop' onClick={play}>
-          <i
-            class={
-              startStop
-                ? 'fas fa-play-circle fa-2x isPlaying'
-                : 'fas fa-play-circle fa-2x'
-            }
-          ></i>
+        <div
+          className={startStop ? 'button-play isPlaying' : 'button-play'}
+          id='start_stop'
+          onClick={play}
+        >
+          <i class='fas fa-play-circle fa-2x'></i>
         </div>
         <div className='button-reset' id='reset' onClick={setReset}>
           <i class='fas fa-history fa-2x'></i>
